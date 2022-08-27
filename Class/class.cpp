@@ -5,6 +5,7 @@ class Student{
     public:
         int age;
         std::string name;
+        static std::string University;// syntax static in class
         Student(){
             std::cout<<"Constructor"<<std::endl;
         }
@@ -24,10 +25,13 @@ class Student{
         }
 };
 
+std::string Student::University = "HCMUT"; // syntax static in class
+
 int main(){
     Student DMD("DMD",24);
     Student DMA(DMD);
     DMD.display();
     DMA.display();
+    std::cout<<DMD.University<<std::endl;// syntax static in class
     return 0;
 }
