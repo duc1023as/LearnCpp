@@ -26,6 +26,14 @@ class Student{
         friend void sayHello(Student &n1){
             std::cout<<n1.name+" "<<n1.age<<" "+n1.University<<std::endl;//friend function in class
         }
+        friend class Parent;// friend class
+};
+
+class Parent{
+    public:
+        Parent(Student &a){//friend class
+            std::cout<<"Friend of class A so Parent can show the name "<<a.name<<std::endl;
+        }
 };
 
 
@@ -38,5 +46,6 @@ int main(){
     DMA.display();
     std::cout<<DMD.University<<std::endl;// syntax static in class
     sayHello(DMD);
+    Parent Dad(DMD);
     return 0;
 }
