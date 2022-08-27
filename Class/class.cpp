@@ -5,6 +5,9 @@ class Student{
     public:
         int age;
         std::string name;
+        Student(){
+            std::cout<<"Constructor"<<std::endl;
+        }
         Student(std::string name,int age){
             this->age = age;
             this->name = name;
@@ -12,6 +15,9 @@ class Student{
         Student(Student &anotherStudent){
             this->name = anotherStudent.name;
             this->age = anotherStudent.age;
+        }
+        ~Student(){
+            std::cout<<"Destructor"<<std::endl;
         }
         void display(){
             std::cout<<name<<std::endl<<age<<std::endl;
