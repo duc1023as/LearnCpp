@@ -23,7 +23,11 @@ class Student{
         void display(){
             std::cout<<name<<std::endl<<age<<std::endl;
         }
+        friend void sayHello(Student &n1){
+            std::cout<<n1.name+" "<<n1.age<<" "+n1.University<<std::endl;//friend function in class
+        }
 };
+
 
 std::string Student::University = "HCMUT"; // syntax static in class
 
@@ -33,5 +37,6 @@ int main(){
     DMD.display();
     DMA.display();
     std::cout<<DMD.University<<std::endl;// syntax static in class
+    sayHello(DMD);
     return 0;
 }
