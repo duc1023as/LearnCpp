@@ -1,11 +1,10 @@
 #include<iostream>
 #include<string>
 #include<vector>
-#include<algorithm>
 
-void BubbleSort(std::vector<int> &vec){
-    for(int i=0;i<vec.size();i++){
-        for(int j=0;j<vec.size();j++){
+void BubbleSort(std::vector<int> &vec,int length){
+    for(int i=0;i<length -1;i++){
+        for(int j =0 ;j < length -1-i;j++ ){
             if(vec[j] > vec[j+1]){
                 std::swap(vec[j],vec[j+1]);
             }
@@ -15,17 +14,18 @@ void BubbleSort(std::vector<int> &vec){
 
 int main(){
     int number;
-    std::cout<<"Size of vector:";
-    std::cin>>number;
     std::vector<int> vec;
+    std::cout<<"Please,input your numbers of vector size: ";
+    std::cin>>number;
     std::srand(time(NULL));
     for(int i=0;i<number;i++){
-        vec.push_back(std::rand()%100+1);
+        int value = rand()%100+1;
+        vec.push_back(value);
     }
-    BubbleSort(vec);
+    BubbleSort(vec,number);
     for(auto x : vec){
         std::cout<<x<<" ";
     }
-    std::cout<<"\n";
+    std::cout<<std::endl;
     return 0;
 }
