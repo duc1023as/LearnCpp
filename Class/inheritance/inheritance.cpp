@@ -1,22 +1,17 @@
-#include<iostream>
+#include <iostream>
+#include <string>
+using namespace std;
 
-class Person{
-    public:
-        void display(){
-            std::cout<<"Person"<<std::endl;
-        }
-};
-
-class Student : private Person{
-    public: 
-        void displayStudent(){
-            display();
-            std::cout<<"Student"<<std::endl;
-        }
-};
-
-int main(){
-    Student x;
-    x.displayStudent();
+int main() {
+	// Complete the program
+    std::string a,b;
+    std::cin>>a>>b;
+    std::cout<<a.size()<<" "<<b.size()<<std::endl;
+    std::cout<<a+b<<std::endl;
+    char temp;
+    temp = a[0];
+    a[0] = b [0];
+    b[0] = temp;
+    std::cout<<a<<" "<<b<<std::endl;
     return 0;
 }
